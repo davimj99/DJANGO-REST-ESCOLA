@@ -32,6 +32,5 @@ class AuthenticationUserTestCase(APITestCase):
 
     def test_requisicao_get_nao_autorizada(self):
         """Teste que verifica uma requisição GET não autorizada"""
-        self.client.force_authenticate(self.usuario)
         response = self.client.get(self.url)
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)    
